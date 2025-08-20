@@ -140,9 +140,8 @@ example (a : α) : (∃ x, p x → r) ↔ (∀ x, p x) → r :=
   (fun h => byContradiction
   (fun hnex => byCases
   (fun hall : ∀ x, p x => hnex ⟨a, fun _ => h hall⟩)
-  (fun _ => have hr : r := h (fun x => byContradiction
-    (fun hnp => hnex ⟨x, fun hp => False.elim (hnp hp)⟩))
-  hnex ⟨a, fun _ => hr⟩)))
+  (fun hnall => hnall (fun x => byContradiction
+    (fun hnp => hnex (⟨x, fun hp => False.elim (hnp hp)⟩))))))
 
 example (a : α) : (∃ x, r → p x) ↔ (r → ∃ x, p x) :=
   Iff.intro
