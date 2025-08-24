@@ -3,3 +3,4 @@
 import TpilSolutions.Basic
 import TpilSolutions.Propositions_and_Proofs
 import TpilSolutions.Quantifiers_and_Equality
+import TpilSolutions.Inductive_Types
